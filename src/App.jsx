@@ -1,10 +1,14 @@
+import { Suspense } from 'react';
 import { RouterProvider } from 'react-router-dom';
 import { router } from './router';
+import { RecoilRoot } from 'recoil';
 
 const App = () => {
   return (
     <div className="App">
-      <RouterProvider router={router} />
+      <RecoilRoot>
+        <RouterProvider router={router} />
+      </RecoilRoot>
     </div>
   )
 }

@@ -1,7 +1,10 @@
 import { createBrowserRouter, Navigate, Outlet } from 'react-router-dom';
 import Main from './pages/Main';
 import Login from './pages/Login';
+
 import Test from './pages/Test';
+import TestApi from './pages/Test/Api';
+import TestRecoil from './pages/Test/Recoil';
 
 export const router = createBrowserRouter([
   {
@@ -22,22 +25,25 @@ export const router = createBrowserRouter([
     element: <Login />,
   },
 
+  // Test Path Routing
   {
-    path: '/Test',
-    index: true,
-    element: <Test />,
+    path: '/test',
+    children: [
+      {
+        path: '',
+        index: true,
+        element: <Test />,
+      },
+      {
+        path: 'api',
+        index: true,
+        element: <TestApi />,
+      },
+      {
+        path: 'recoil',
+        index: true,
+        element: <TestRecoil />,
+      },
+    ],
   },
-
-  // Auth Routes
-  // {
-  //   path: '/lobby',
-  //   element: <AuthRoute/>,
-  //   children: [
-  //     {
-  //       path: '',
-  //       index: true,
-  //       element: <Navigate to={'home'}/>,
-  //     },
-  //   ],
-  // },
 ]);
