@@ -1,0 +1,33 @@
+// 로그인 페이지 전체 감싸는 wrap
+.loginWrap {
+  // width: 500px;
+}
+
+// 페이지 헤더 텍스트
+.headerText {
+  font-size: 25px;
+  color: #333;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.inputField {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
+
+  .idInputWrap, .pwInputWrap {
+    width: 200px;
+    height: 30px;
+    .idInput, .pwInput {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.loginBtn {
+  margin-top: 10px;
+}
